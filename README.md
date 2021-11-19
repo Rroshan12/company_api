@@ -15,6 +15,52 @@ Authorization  Bearer API_KEY  and made request at every endpoint
 
 API_KEY is given at top use that on
 
+************************************************************************************
+end points:
+getrequest{
+//getallcategories
+http://localhost:5000/api/category
+
+//getallcompanies
+http://localhost:5000/api/company
+
+//getcategory singel
+http://localhost:5000/api/category/:id
+
+//getcompany singel
+http://localhost:5000/api/company/:id
+}
+
+**************************************************************************************
+postRequest{
+//createcompany
+http://localhost:5000/api/company
+
+//createcategories
+http://localhost:5000/api/category
 
 
+}
+**************************************************************************************
 
+putRequest{
+//updatecompany
+http://localhost:5000/api/company/:id
+
+//updatecategory
+http://localhost:5000/api/category/:id
+
+
+}
+
+*********************************************************************
+delete request
+{
+//deletecompany
+http://localhost:5000/api/company/:id
+
+//deletecategory
+http://localhost:5000/api/category/:id
+
+
+}
