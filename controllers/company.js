@@ -10,9 +10,15 @@ const router = express.Router();
 
 export const getCompanys = async(req, res) =>
 {
+    const page = req.query.page;
+    const limit = req.query.limit;
+
+    const startIndex = (page-1)*limit;
+    const endIndex = page*limit;
+
     try{
         const company = await Company.find();
-        res.status(200).json(company);
+        res.status(200).json(company.slice(startIndex, endIndex));
 
     }
     catch(error)
