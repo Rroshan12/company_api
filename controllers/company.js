@@ -41,3 +41,20 @@ export const getCompany = async(req,res)=>
 
     }
 }
+
+//create the company
+
+export const createCompany = async(req,res) =>
+{
+    const company = req.body;
+    const newCompany = new Company({...company, createdAt: new Date().toISOString() });
+
+    try{
+        await newCompany.save();
+        res.status(201).json(newCompany);
+    }
+    catch(error)
+    {
+        res.status(409).json({ message: error.message });
+    }
+}
