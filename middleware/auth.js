@@ -4,6 +4,7 @@ dotenv.config();
 
 const secret= process.env.API_KEY;
 
+//validating token from client request
 const auth = async(req,res,next)=>
 {
     if(req.headers.authorization && 
