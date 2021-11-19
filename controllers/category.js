@@ -10,9 +10,14 @@ const router = express.Router();
 //get list of categories
 export const getCategories = async(req, res) =>
 {
+    const page = req.query.page;
+    const limit = req.query.limit;
+
+    const startIndex = (page-1)*limit;
+    const endIndex = page*limit;
     try{
         const category = await Category.find();
-        res.status(200).json(category);
+        res.status(200).json(category.slice(startIndex, endIndex));
 
     }
     catch(error)
