@@ -58,3 +58,18 @@ export const createCompany = async(req,res) =>
         res.status(409).json({ message: error.message });
     }
 }
+
+
+//update company
+export const updateCompany = async( req, res) =>
+{
+ const {id} = req.params;
+ const{title,category_id,description, image, status} = req.body;
+ if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No Company with this id: ${id}`);
+
+ const updateCompany = {title,category_id,description, image, status, _id:id};
+ await Company.findByIdAndUpdate(id, updateCompany, {new: true});
+
+ res.json(updateCompany);
+
+}
