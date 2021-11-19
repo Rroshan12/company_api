@@ -21,7 +21,7 @@ const auth = async(req,res,next)=>
 
         }
         else{
-            res.json({message:"bearer token not matched"});
+            res.json({message:"bearer token not matched auth failed"});
 
         }
     
@@ -35,7 +35,7 @@ const auth = async(req,res,next)=>
     }
 }
 else{
-    res.json({message:"no bearer token"});
+    res.json({message:"no Authorized bearer token in request"});
 }
 }
 
