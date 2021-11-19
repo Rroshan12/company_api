@@ -6,7 +6,9 @@ import cors from 'cors';
 import companyRoute from './routes/companyRoute.js';
 import categoryRoute from './routes/categoryRoute.js'
 
+import dotenv from 'dotenv';
 
+dotenv.config();
 
 const app = express();
 
@@ -23,7 +25,7 @@ app.use('/api/category', categoryRoute);
 
 
 
-const CONNECTION_URL = 'mongodb+srv://Jshero:Jshero123@cluster0.x4qnw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const CONNECTION_URL = process.env.MONGO_URI
 const PORT = process.env.PORT|| 5000;
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
