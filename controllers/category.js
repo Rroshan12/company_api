@@ -41,6 +41,22 @@ export const getCategory = async(req,res)=>
     }
 }
 
+//create categories
+
+export const createCategory = async(req,res) =>
+{
+    const category = req.body;
+    const newCategory = new Category({...category, createdAt: new Date().toISOString() });
+
+    try{
+        await newCategory.save();
+        res.status(201).json(newCategory);
+    }
+    catch(error)
+    {
+        res.status(409).json({ message: error.message });
+    }
+}
 
 
 
