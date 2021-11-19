@@ -20,4 +20,4 @@ updatedAt: {
 
 var Category  = mongoose.model('Category', categorySchema);
 
-export default categorySchema ;
+export default Category ;

@@ -25,4 +25,4 @@ updatedAt: {
 
 var Company = mongoose.model('Company', companySchema);
 
-export default companySchema;
+export default Company;

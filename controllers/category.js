@@ -1,15 +1,16 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import Category from '../models/category.js';
 
-import Company from '../models/company.js'
+
 
 const router = express.Router();
 
-export const getCompanys = async(req, res) =>
+export const getCategories = async(req, res) =>
 {
     try{
-        const company = await Company.find();
-        res.status(200).json(company);
+        const category = await Category.find();
+        res.status(200).json(category);
 
     }
     catch(error)
