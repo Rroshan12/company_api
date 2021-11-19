@@ -1,12 +1,13 @@
 import express from 'express';
 const router = express.Router();
 import {getCategories,getCategory,createCategory, updateCategory, deleteCategory} from '../controllers/category.js'
+import auth from "../middleware/auth.js";
 
-router.get('/', getCategories);
-router.get('/:id', getCategory);
-router.post('/', createCategory);
-router.put('/:id', updateCategory);
-router.delete('/:id', deleteCategory);
+router.get('/', auth, getCategories);
+router.get('/:id',auth, getCategory);
+router.post('/',auth, createCategory);
+router.put('/:id',auth, updateCategory);
+router.delete('/:id',auth, deleteCategory);
 
 
 
