@@ -73,3 +73,15 @@ export const updateCompany = async( req, res) =>
  res.json(updateCompany);
 
 }
+
+//delete Company
+
+export const deleteCompany = async(req, res) =>
+{
+    const{id} = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No Company with this id: ${id}`);
+    await Company.findByIdAndRemove(id);
+    res.json({message:"Company deleted successfully."});
+
+}
+
