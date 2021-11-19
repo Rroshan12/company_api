@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 
 const companySchema = mongoose.Schema({
-    category_id:[
+    category_id:
         {type: mongoose.Schema.Types.ObjectId, ref: 'Category'}
-      ],
+      ,
   title: String,
   image: String,
   descrpition: String,
@@ -16,6 +16,12 @@ updatedAt: {
     type: Date,
     default: new Date(),
 },
+category_detail:{
+    type :Object,
+
+}
+   
+
 
 
 
