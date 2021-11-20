@@ -82,10 +82,22 @@ export const getCompany = async (req, res) => {
             if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No Company with this id: ${id}`);
             if (!mongoose.Types.ObjectId.isValid(category_id)) return res.status(404).send(`No Category with this id: ${category_id}`);
             const inserty = await Category.findById(category_id);
-        
-            await Company.findOneAndUpdate({category_id:category_id},{category_detail:inserty},{new:true});
             const company = await Company.findById(id);
-            res.status(200).json(company);
+            
+            if(company.category_id ==category_id)
+            {
+                await Company.findOneAndUpdate({category_id:category_id},{category_detail:inserty},{new:true});
+                const company = await Company.findById(id);
+                res.status(200).json(company);
+
+            }
+            else{
+                res.json({ message: "provide respetive company id with category id" });
+
+            }
+           
+            
+           
         
         }
 
