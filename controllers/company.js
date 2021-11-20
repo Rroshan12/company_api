@@ -22,18 +22,20 @@ export const getCompanys = async (req, res) => {
 
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
+    const company = await Company.find();
+    const inserty = await Category.findById(category_id);
 
     try {
         if (!category_id) {
 
             if (page && limit) {
-                const company = await Company.find();
+              
                 res.status(200).json(company.slice(startIndex, endIndex));
 
 
             }
             else {
-                const company = await Company.find();
+              
                 res.status(200).json(company);
 
             }
@@ -42,7 +44,7 @@ export const getCompanys = async (req, res) => {
         //get companies with category detail
         else{
             if (!mongoose.Types.ObjectId.isValid(category_id)) return res.status(404).send(`No Category with this id: ${category_id}`);
-            const inserty = await Category.findById(category_id);
+          
         
             await Company.findOneAndUpdate({category_id:category_id},{category_detail:inserty},{new:true});
             const company = await Company.find();
