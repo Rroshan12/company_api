@@ -2,13 +2,15 @@ import mongoose from 'mongoose';
 
 const categorySchema = mongoose.Schema({
 
-  title: String,
+  title: {type:String,trim:true, required: true},
   createdAt: {
     type: Date,
+    required: true,
     default: new Date(),
 },
 updatedAt: {
     type: Date,
+    required: true,
     default: new Date(),
 },
 
