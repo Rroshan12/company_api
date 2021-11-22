@@ -74,7 +74,7 @@ export const updateCategory = async (req, res) => {
     const { title } = req.body;
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No Category with this id: ${id}`);
 
-    const updateCategory = { title, _id: id };
+    const updateCategory = { title, _id: id, updatedAt: new Date().toISOString()  };
     await Category.findByIdAndUpdate(id, updateCategory, { new: true });
 
     res.json(updateCategory);
