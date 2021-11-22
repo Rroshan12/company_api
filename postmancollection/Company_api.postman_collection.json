@@ -12,8 +12,25 @@
 					"name": "getCategories",
 					"request": {
 						"method": "GET",
-						"header": [],
-						"url": null
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BA673A414C3B44C98478BB5CF10A0F832574090C",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"category"
+							]
+						}
 					},
 					"response": []
 				},
@@ -21,35 +38,118 @@
 					"name": "getcategorybyid",
 					"request": {
 						"method": "GET",
-						"header": [],
-						"url": null
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BA673A414C3B44C98478BB5CF10A0F832574090C",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/category/6197a95853732e7fd8b82ac6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"category",
+								"6197a95853732e7fd8b82ac6"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "createCategory",
 					"request": {
-						"method": "GET",
-						"header": [],
-						"url": null
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BA673A414C3B44C98478BB5CF10A0F832574090C",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Beverage10\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"category"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "updateCategory",
 					"request": {
-						"method": "GET",
+						"method": "PUT",
 						"header": [],
-						"url": null
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"updatedby category end point\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/category/6197a95853732e7fd8b82ac6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"category",
+								"6197a95853732e7fd8b82ac6"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "deleteCategory",
 					"request": {
-						"method": "GET",
-						"header": [],
-						"url": null
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BA673A414C3B44C98478BB5CF10A0F832574090C",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/category/6197ab7153732e7fd8b82ac7hujk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"category",
+								"6197ab7153732e7fd8b82ac7hujk"
+							]
+						}
 					},
 					"response": []
 				}
@@ -62,8 +162,35 @@
 					"name": "pageRequestCompany",
 					"request": {
 						"method": "GET",
-						"header": [],
-						"url": null
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BA673A414C3B44C98478BB5CF10A0F832574090C",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/company?page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"company"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
 					},
 					"response": []
 				},
@@ -71,8 +198,35 @@
 					"name": "pageRequestCategory",
 					"request": {
 						"method": "GET",
-						"header": [],
-						"url": null
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BA673A414C3B44C98478BB5CF10A0F832574090C",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/category?page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"category"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
 					},
 					"response": []
 				}
@@ -85,8 +239,39 @@
 					"name": "forcompanies",
 					"request": {
 						"method": "GET",
-						"header": [],
-						"url": null
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BA673A414C3B44C98478BB5CF10A0F832574090C",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/company?category_id=6197a95853732e7fd8b82ac6&page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"company"
+							],
+							"query": [
+								{
+									"key": "category_id",
+									"value": "6197a95853732e7fd8b82ac6"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
 					},
 					"response": []
 				},
@@ -94,8 +279,40 @@
 					"name": "forcompany",
 					"request": {
 						"method": "GET",
-						"header": [],
-						"url": null
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BA673A414C3B44C98478BB5CF10A0F832574090C",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/company/6197a92453732e7fd8b82ac5?category_id=6197a95853732e7fd8b82ac6&page=1&limit=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"company",
+								"6197a92453732e7fd8b82ac5"
+							],
+							"query": [
+								{
+									"key": "category_id",
+									"value": "6197a95853732e7fd8b82ac6"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
 					},
 					"response": []
 				}
@@ -105,17 +322,60 @@
 			"name": "getCompanys",
 			"request": {
 				"method": "GET",
-				"header": [],
-				"url": null
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer BA673A414C3B44C98478BB5CF10A0F832574090C",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/company",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"company"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "createCompany",
 			"request": {
-				"method": "GET",
-				"header": [],
-				"url": null
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer BA673A414C3B44C98478BB5CF10A0F832574090C",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"category_id\":\"6197eb2076da9b15c57a87dc\",\n    \"title\": \"sdhdskjfh\",\n    \"image\": \"a/b/c/d\",\n    \"status\": true\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/company",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"company"
+					]
+				}
 			},
 			"response": []
 		},
@@ -123,26 +383,89 @@
 			"name": "getCompany",
 			"request": {
 				"method": "GET",
-				"header": [],
-				"url": null
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer BA673A414C3B44C98478BB5CF10A0F832574090C",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/company/6197a92453732e7fd8b82ac5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"company",
+						"6197a92453732e7fd8b82ac5"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "updateCompany",
 			"request": {
-				"method": "GET",
-				"header": [],
-				"url": null
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer BA673A414C3B44C98478BB5CF10A0F832574090C",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\":\"updatedCompany\",\n    \"category_id\":\"6197a95853732e7fd8b82ac6\",\n    \"description\":\"updatedDescription\",\n    \"status\": true\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/company/6197a92453732e7fd8b82ac5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"company",
+						"6197a92453732e7fd8b82ac5"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "deleteCompany",
 			"request": {
-				"method": "GET",
-				"header": [],
-				"url": null
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer BA673A414C3B44C98478BB5CF10A0F832574090C",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/company/6197ab7f53732e7fd8b82ac8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"company",
+						"6197ab7f53732e7fd8b82ac8"
+					]
+				}
 			},
 			"response": []
 		}
