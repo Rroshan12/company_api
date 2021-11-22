@@ -68,3 +68,15 @@ http://localhost:5000/api/category/:id
 
 
 }
+************************************************************************************************************
+paginating
+http://localhost:5000/api/company?page=1&limit=10
+http://localhost:5000/api/category?page=1&limit=10
+
+categorisedpagination
+list of comapny
+http://localhost:5000/api/company?category_id=6197a95853732e7fd8b82ac6&page=1&limit=10
+
+only company
+http://localhost:5000/api/company/6197a92453732e7fd8b82ac5?category_id=6197a95853732e7fd8b82ac6&page=1&limit=5
+
